@@ -2,10 +2,11 @@ import React from "react";
 import { Table, Button, Row, Col } from "reactstrap";
 import "./cardTable.css";
 //import CardIndex from "./CardIndex";
+import APIURL from "../../helpers/environment"
 
 const CardTable = props => {
   const deleteCard = card => {
-    fetch(`http://localhost:4000/api/card/delete/${card.id}`, {
+    fetch(`${APIURL}/api/card/delete/${card.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

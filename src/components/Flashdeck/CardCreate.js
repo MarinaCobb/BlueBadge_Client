@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap'
 import "./cardcreate.css";
-
+import APIURL from "../../helpers/environment"
 
 const CardCreate = (props) => {
     let [concept, setConcept] = useState('')
@@ -10,7 +10,7 @@ const CardCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:4000/api/card/create', {
+        fetch(`${APIURL}/api/card/create`, {
         method: 'POST',
         headers: new Headers({
             "Content-Type" : "application/json",

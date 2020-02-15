@@ -9,6 +9,7 @@ import {
   Input,
   Button
 } from "reactstrap";
+import APIURL from "../../helpers/environment"
 
 const CardEdit = props => {
   const [editConcept, setEditConcept] = useState(props.cardToUpdate.concept);
@@ -17,7 +18,7 @@ const CardEdit = props => {
 
   const cardUpdate = (event, card) => {
     event.preventDefault();
-    fetch(`http://localhost:4000/api/card/update/${props.cardToUpdate.id}`, {
+    fetch(`${APIURL}/api/card/update/${props.cardToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         card: {

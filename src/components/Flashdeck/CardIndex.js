@@ -15,6 +15,7 @@ import CardEdit from "./CardEdit";
 import Practice from "./Practice"
 // import Sidebar from '../Routes/Sidebar'
 // import { BrowserRouter as Router, } from 'react-router-dom';
+import APIURL from "../../helpers/environment"
 
 function CardIndex(props) {
   const [cards, setCards] = useState([]);
@@ -40,7 +41,7 @@ function CardIndex(props) {
   };
 
   const fetchCards = () => {
-    fetch("http://localhost:4000/api/card/getall", {
+    fetch(`${APIURL}/api/card/getall`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
