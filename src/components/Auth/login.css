@@ -1,0 +1,25 @@
+.label {
+  text-align: left;
+  align-content: left;
+}
+
+.button {
+  align-items: left;
+}
+
+
+.jumbotron {
+    animation: pulse 5s infinite;
+  }
+  
+    @keyframes pulse {
+    0% {
+      background-color: #163765;
+    }
+    100% {
+      background-color: #901e1e;
+    }
+    
+  }
+
+  /* make col for login and signup button*/
