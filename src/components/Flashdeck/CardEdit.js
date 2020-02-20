@@ -15,6 +15,12 @@ const CardEdit = props => {
   const [editConcept, setEditConcept] = useState(props.cardToUpdate.concept);
   const [editDef, setEditDef] = useState(props.cardToUpdate.definition);
   const [editExample, setEditExample] = useState(props.cardToUpdate.example);
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
+  const {
+    buttonLabel,
+    className
+  } = props;
 
   const cardUpdate = (event, card) => {
     event.preventDefault();

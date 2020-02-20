@@ -4,7 +4,7 @@ import Auth from "./components/Auth/Auth";
 import Sitebar from "./components/Navbar/Navbar";
 import CardIndex from "./components/Flashdeck/CardIndex";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import About from "../src/components/Routes/About";
 import Words from "../src/components/Routes/Words";
 

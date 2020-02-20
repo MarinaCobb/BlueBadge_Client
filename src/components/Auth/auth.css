@@ -1,11 +1,10 @@
-#button1 {
-    align-items: center;
-    background-color: white;
-    border: none;
-    color: #000000;
-    padding: 0px 0px;
+div {
+    margin:auto;
 }
 
-#button1:hover {
-    color: red
-}
+.link {
+    color: #FFF;
+  }
+  .link:hover {
+     color: #00F
+  }

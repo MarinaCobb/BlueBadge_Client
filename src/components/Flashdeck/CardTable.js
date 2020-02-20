@@ -1,7 +1,6 @@
 import React from "react";
 import { Table, Button, Row, Col } from "reactstrap";
 import "./cardTable.css";
-//import CardIndex from "./CardIndex";
 import APIURL from "../../helpers/environment"
 
 const CardTable = props => {
@@ -63,7 +62,11 @@ const CardTable = props => {
   };
 
   return (
-    <>
+    <div
+    style={{
+      backgroundColor: 'white',
+    }}
+    >
       <h3>Card History</h3>
       <hr />
       <Table hover>
@@ -79,7 +82,7 @@ const CardTable = props => {
         </thead>
         <tbody>{cardMapper()}</tbody>
       </Table>
-    </>
+    </div>
   );
 };
 

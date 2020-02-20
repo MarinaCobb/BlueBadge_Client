@@ -1,11 +1,15 @@
-.NB {
-    background-color: #2c2e3a;
+.button {
+    background-color:white;
 }
 
-h4 {
-    font-family: Nixie One;
+.navitem{
+    flex-direction: column;
 }
 
-ul {
-    list-style-type: none;
-  }
+.main {
+    float: right;
+}
+
+.link {
+    color: white
+}

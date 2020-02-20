@@ -9,9 +9,9 @@ import {
   Nav
 } from "reactstrap";
 
-import CardIcon from "./flashcards.png";
+import CardIcon from "./FlashCards1-01.png";
 import "./navbar.css";
-import { Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Sitebar = props => {
   let [isOpen, setIsOpen] = useState(false);
@@ -21,31 +21,23 @@ const Sitebar = props => {
   };
 
   return (
-    <Navbar className="NB">
+    <Navbar color="dark">
       <NavbarBrand>
-        <img src={CardIcon} style={{ width: 200 }} />
+        <img src={CardIcon} style={{ width: 150 }} />
       </NavbarBrand>
-      {/* <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar> */}
-        <Nav className="ml-auto" navbar>
-          <NavItem>
-            {/* <Button className="pull-right" onClick={props.clickLogout}>
-              Logout
-            </Button> */}
-          </NavItem>
-
-      <ul>
-        <li>
-          <Link to="/">Login</Link>
-          <Link to="/about">About</Link>
-          <Link to="/words">Words</Link>
-          <Button className="pull-right" onClick={props.clickLogout}>
+     <NavbarToggler className="btn-dark" onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar color="dark">
+        <Nav className="main">
+        <div className="d-flex flex-column bd-highlight mb-3">
+        <div className="p-2 bd-highlight"><Link to="/" style={{ color: '#FFF' }}>Home</Link></div>
+        <div className="p-2 bd-highlight"><Link to="/about" style={{ color: '#FFF' }}>About</Link></div>
+        <div className="p-2 bd-highlight"><Link to="/words" style={{ color: '#FFF' }}>Words</Link></div>
+          <Button type="button" className="btn btn-light" onClick={props.clickLogout}>
               Logout
             </Button>
-        </li>
-      </ul>
+            </div>
       </Nav>
-      {/* </Collapse> */}
+      </Collapse>
     </Navbar>
   );
 };

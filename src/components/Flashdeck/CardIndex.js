@@ -13,8 +13,7 @@ import CardCreate from "./CardCreate";
 import CardTable from "./CardTable";
 import CardEdit from "./CardEdit";
 import Practice from "./Practice"
-// import Sidebar from '../Routes/Sidebar'
-// import { BrowserRouter as Router, } from 'react-router-dom';
+
 import APIURL from "../../helpers/environment"
 
 function CardIndex(props) {
@@ -121,14 +120,14 @@ function CardIndex(props) {
         </TabPane>
         <TabPane tabId="createCard">
           <Row>
-            <Col sm="6">
+            <Col>
               <CardCreate fetchCards={fetchCards} token={props.token} />
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="Practice">
           <Row>
-            <Col sm="6">
+            <Col>
               <Practice fetchCards={fetchCards} token={props.token} cards={cards}/>
             </Col>
           </Row>

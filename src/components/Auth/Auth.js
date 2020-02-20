@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Signup from "./Signup";
 import Login from "./Login";
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Row, Col } from "reactstrap";
 import "./auth.css";
 
 const Auth = props => {
@@ -30,15 +30,19 @@ const Auth = props => {
   }
   return (
     
-    <div>
+
+      <Row>
+        <Col>
       {toggleLogin()}
       {
-        <Button onClick={changeView} color="link">
+        <div className="d-flex justify-content-center"><Button style={{ color: '#FFF' }} onClick={changeView} color="link" className="button1">
           {loginText}
            {buttonName}
         </Button>
+        </div>
       }
-    </div>
+      </Col>
+      </Row>
   );
 };
 

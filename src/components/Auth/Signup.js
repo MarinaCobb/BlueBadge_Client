@@ -1,6 +1,6 @@
 import React, { useState, Component } from 'react';
 import './signup.css';
-import { Form, FormGroup, Label, Input, Button, Jumbotron, Row, Col } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Container, Row, Col } from 'reactstrap';
 import APIURL from "../../helpers/environment"
 
 function Signup(props) {
@@ -28,24 +28,31 @@ function Signup(props) {
 
 
   return (
-    <div>
-      <Jumbotron className='element'>
-      <Row>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
+    <div className="login-page">
+      <Container
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        <Row>
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
         <Form onSubmit={handleSubmit}>
           <FormGroup>
             <Label htmlFor="username">Username</Label>
-            <Input onChange={(e) => { setUsername(e.target.value) }} placeholder="Username must be a valid email address" name="username" value={username} type='email' required />
+            <Input onChange={(e) => { setUsername(e.target.value) }} placeholder="must be a valid email" name="username" value={username} type='email' required />
           </FormGroup>
           <FormGroup>
             <Label htmlFor="password">Password</Label>
-            <Input onChange={(e) => { setPassword(e.target.value) }} placeholder="Password must be at least 5 characters long " value={password} type="password" name="password" minLength='5' required />
+            <Input onChange={(e) => { setPassword(e.target.value) }} placeholder="must be at least 5 characters" value={password} type="password" name="password" minLength='5' required />
           </FormGroup>
-          <Button type="submit">Signup</Button>
+          <Button type="submit" outline color="danger">Signup</Button>
         </Form>
         </Col>
         </Row>
-      </Jumbotron>
+      </Container>
     </div>
   )
 }

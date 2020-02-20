@@ -1,37 +1,34 @@
-import React , { useState } from "react";
-import {
-  Card,
-  Button,
-  CardTitle,
-  CardDeck,
-  CardSubtitle,
-  CardBody,
-  Fade
-} from "reactstrap";
+import React from "react";
+import { Card, CardSubtitle, CardBody, CardDeck, Container, Row, Col } from "reactstrap";
 import "./practice.css";
 //import CardIndex from "./CardIndex";
 
 const Practice = props => {
-
-  const [clickedIndex, setClickedIndex] = useState(0)
-  const [fadeIn, setFadeIn] = useState(false);
-  const toggle = (transfer) => {
-  setFadeIn(!fadeIn)
-  setClickedIndex(transfer)
-  }
   const flashCardMapper = () => {
     return props.cards
       ? props.cards.map((card, index) => {
+          console.log(card);
           return (
-            <Card key={index}>
-              {/* <CardTitle>{card.id}</CardTitle> */}
-              <CardSubtitle>{card.concept}</CardSubtitle>
-              <CardBody>{card.example}</CardBody>
-            <Button color="primary" size="sm" onClick={()=>toggle(index)}>Definition</Button>
-            <Fade in={fadeIn} tag="h5" className="mt-3">
-            {index==clickedIndex ? card.definition : null}
-            </Fade>
-            </Card>
+            <Container>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <Card key={index}>
+                      {/* <CardTitle>{card.id}</CardTitle> */}
+                      <CardSubtitle>{card.concept}</CardSubtitle>
+                      <CardBody>{card.example}</CardBody>
+                    </Card>
+                  </div>
+
+                  <div className="flip-card-back">
+                    <Card key={index}>
+                      {/* <CardTitle>{card.id}</CardTitle> */}
+                      <CardBody>{card.definition}</CardBody>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </Container>
           );
         })
       : () => {
@@ -41,8 +38,7 @@ const Practice = props => {
 
   return (
     <>
-      <h3>Card History</h3>
-      <hr />
+      <h3>Flash Cards</h3>
       <CardDeck>{flashCardMapper()}</CardDeck>
     </>
   );
