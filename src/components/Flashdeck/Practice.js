@@ -9,11 +9,11 @@ const Practice = props => {
       ? props.cards.map((card, index) => {
           console.log(card);
           return (
-            <Container>
+            <Container key = {index}>
               <div className="flip-card">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <Card key={index}>
+                    <Card key={index} className="border border-white">
                       {/* <CardTitle>{card.id}</CardTitle> */}
                       <CardSubtitle>{card.concept}</CardSubtitle>
                       <CardBody>{card.example}</CardBody>
@@ -21,7 +21,7 @@ const Practice = props => {
                   </div>
 
                   <div className="flip-card-back">
-                    <Card key={index}>
+                    <Card key={index} className="border border-white">
                       {/* <CardTitle>{card.id}</CardTitle> */}
                       <CardBody>{card.definition}</CardBody>
                     </Card>

@@ -10,6 +10,8 @@ import {
   Button
 } from "reactstrap";
 import APIURL from "../../helpers/environment"
+import "./cardEdit.css";
+
 
 const CardEdit = props => {
   const [editConcept, setEditConcept] = useState(props.cardToUpdate.concept);
@@ -44,10 +46,14 @@ const CardEdit = props => {
   };
 
   return (
+    <div>
     <Modal isOpen={true}>
-      <ModalHeader>Update Card</ModalHeader>
+      <ModalHeader>Update Flash Card</ModalHeader>
       <ModalBody>
-        <Form onSubmit={cardUpdate}>
+        <Form onSubmit={cardUpdate} className="edit-form" style={{
+        boxShadow: "none",
+        marginTop: "0"
+      }}>
           <FormGroup>
             <Label htmlFor="example">Edit Example:</Label>
             <Input
@@ -72,10 +78,12 @@ const CardEdit = props => {
               onChange={e => setEditDef(e.target.value)}
             ></Input>
           </FormGroup>
-          <Button type="submit">Update the Card!</Button>
+          <br />
+          <Button type="submit" outline color="info">Update or Cancel</Button>
         </Form>
       </ModalBody>
     </Modal>
+    </div>
   );
 };
 

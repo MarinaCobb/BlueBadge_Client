@@ -1,25 +1,29 @@
 import React from 'react';
-import { Container, Card, CardSubtitle, CardBody } from 'reactstrap';
+import { Container, Card, CardTitle, CardBody, CardText } from 'reactstrap';
 import "./about.css"
 
 const About = () => {
   return (
     <div>
     <Container>
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <Card>
+              <div className="flip-card-about">
+                <div className="flip-card-inner-about">
+                  <div className="flip-card-front-about">
+                    <Card className="border border-white">
                       {/* <CardTitle>{card.id}</CardTitle> */}
-                      <CardSubtitle>About Me</CardSubtitle>
-                      <CardBody>Newbie at developing.</CardBody>
+                      <CardBody>
+                      <CardTitle>About Me</CardTitle>
+                      <CardText>Newbie at developing.</CardText>
+                      </CardBody>
                     </Card>
                   </div>
 
-                  <div className="flip-card-back">
-                    <Card>
-                    <CardSubtitle>About Flash Cards</CardSubtitle>
-                      <CardBody>I hope you will find this useful in your studies.</CardBody>
+                  <div className="flip-card-back-about">
+                  <Card className="border border-white">
+                      <CardBody>
+                    <CardTitle>About Flash Cards</CardTitle>
+                      <CardText>I hope you will find this useful in your studies.</CardText>
+                      </CardBody>
                     </Card>
                   </div>
                 </div>

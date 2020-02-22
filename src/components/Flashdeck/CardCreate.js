@@ -37,7 +37,9 @@ const CardCreate = (props) => {
     return (
         <>
         <Container>
-        <h3>Create a Card</h3>
+            <br/>
+        <h3>Create a Flash Card</h3>
+        <br/>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="concept"> Concept </Label>
@@ -52,7 +54,7 @@ const CardCreate = (props) => {
                 <Label htmlFor="example"> Example </Label>
                 <Input onChange={(e) => {setExample(e.target.value) }} name="example" value={example} />
             </FormGroup>
-            <Button type="submit">Click to Submit</Button>
+            <Button type="submit" outline color="info">Click to Submit</Button>
         </Form>
         </Container>
     </>

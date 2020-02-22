@@ -12,7 +12,7 @@
 
 let APIURL = '';
 if (window.location.hostname==='localhost' || window.location.hostname == '127.0.0.1') {
-    APIURL = 'http://localhost:40000';
+    APIURL = 'http://localhost:4000';
 } else {
     APIURL = 'https://mc-flashcard-server.herokuapp.com'
 }
